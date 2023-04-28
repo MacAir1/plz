@@ -7,7 +7,7 @@ import Nfts from "../components/Nfts";
 const web3 = new Web3(window.ethereum);
 const contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
 
-const Main = ({ account }) => {
+const Mai = ({ account }) => {
   const [totalNft, setTotalNft] = useState(0);
   const [mintedNft, setMintedNft] = useState(0);
   const [myNft, setMyNft] = useState(0);
@@ -73,4 +73,4 @@ const Main = ({ account }) => {
   );
 };
 
-export default Main;
+export default Mai;

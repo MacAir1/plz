@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Main from "./pages/Main";
+import Mai from "./pages/mai";
 import Detail from "./pages/detail";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -13,7 +13,7 @@ function App() {
       <div className="bg-red-100">
         <Header account={account} setAccount={setAccount} />
         <Routes>
-          <Route path="/" element={<Main account={account} />} />
+          <Route path="/" element={<Mai account={account} />} />
           <Route path="/:tokenId" element={<Detail />} />
         </Routes>
         <Footer />
