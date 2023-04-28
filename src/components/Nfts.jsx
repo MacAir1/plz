@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
 const Nfts = ({ page, mintedNft }) => {
   const [selectedPage, setSelectedPage] = useState(1);
   const [nfts, setNfts] = useState();
@@ -60,20 +59,24 @@ const Nfts = ({ page, mintedNft }) => {
   return (
     <div>
       <div className="flex text-xl justify-end">{pageComp()}</div>
-      {nfts?.map((v, i) => {
-        return (
-          <div key={i} className="my-10 items-baseline text-xl flex float-left">
-            {parseInt(mintedNft) < v.tokenId && <div>Not Minted</div>}
-            <div className="flex justify-center">
-              <img src={v.metadata.image} alt={v.metadata.name} />
+      <div className="grid grid-cols-3 ">
+        {nfts?.map((v, i) => {
+          return (
+            <div key={i} className="my-10 items-baseline text-xㅣ">
+              {parseInt(mintedNft) < v.tokenId && <div>Not Minted</div>}
+              <div className="flex justify-center">
+                <img src={v.metadata.image} alt={v.metadata.name} />
+              </div>
+              <div className="ml-10 "># {v.tokenId}</div>
+              <Link to={`/${v.tokenId}`}>
+                <button disabled={parseInt(mintedNft) < v.tokenId}>
+                  Detail
+                </button>
+              </Link>
             </div>
-            <div className="ml-10 "># {v.tokenId}</div>
-            <Link to={`/${v.tokenId}`}>
-              <button disabled={parseInt(mintedNft) < v.tokenId}>Detail</button>
-            </Link>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 };

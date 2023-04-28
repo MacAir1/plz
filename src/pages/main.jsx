@@ -3,7 +3,6 @@ import Intro from "../components/Intro";
 import { CONTRACT_ABI, CONTRACT_ADDRESS } from "../web3.config";
 import { useEffect, useState } from "react";
 import Nfts from "../components/Nfts";
-import Footer from "../components/Footer";
 
 const web3 = new Web3(window.ethereum);
 const contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
@@ -70,7 +69,6 @@ const Main = ({ account }) => {
     <div>
       <Intro totalNft={totalNft} mintedNft={mintedNft} myNft={myNft} />
       <Nfts page={page} mintedNft={mintedNft} />
-      <Footer />
     </div>
   );
 };

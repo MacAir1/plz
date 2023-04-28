@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Main from "./pages/main";
+import Main from "./pages/Main";
 import Detail from "./pages/detail";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import { useState } from "react";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Main account={account} />} />
           <Route path="/:tokenId" element={<Detail />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );
